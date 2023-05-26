@@ -1,12 +1,20 @@
 function NavigationMenu() {
+  const cityList = ["Bangalore", "Chennai", "Hyderabaad", "Mangalore"];
+  const handleClick = (event: MouseEvent) => console.log(event);
   return (
-    <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
-    </ul>
+    <>
+      <h4>Our offices are in following location.</h4>
+      {cityList.length === 0 && (
+        <p>No other location except Bangalore in India</p>
+      )}
+      <ul className="list-group">
+        {cityList.map((item) => (
+          <li className="list-group-item" key={item} onClick={handleClick}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
