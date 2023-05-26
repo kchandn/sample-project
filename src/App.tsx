@@ -1,3 +1,4 @@
+import Message from "./components/Message";
 import FavColour from "./components/fav-colour";
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -5,13 +6,17 @@ import MainContent from "./components/main-content";
 import NavigationMenu from "./components/navigation-menu";
 
 function App() {
-  // return <Message />;
+  const cityList = ["Bangalore", "Chennai", "Hyderabaad", "Mangalore"];
+  // return <Message text="Chandan" />;
   return (
     <div>
       {/* <FavColour /> */}
       <Header />
       <span>
-        <NavigationMenu />
+        <NavigationMenu
+          listHeading="Our offices are in following location."
+          listItem={cityList}
+        />
         <MainContent />
       </span>
       <Footer />

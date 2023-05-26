@@ -1,17 +1,21 @@
 import { useState } from "react";
 
-function NavigationMenu() {
-  const cityList = ["Bangalore", "Chennai", "Hyderabaad", "Mangalore"];
+interface Props {
+  listHeading: string;
+  listItem: string[];
+}
+
+function NavigationMenu(props: Props) {
   const handleClick = (event: MouseEvent) => console.log(event);
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <>
-      <h4>Our offices are in following location.</h4>
-      {cityList.length === 0 && (
+      <h4>{props.listHeading}</h4>
+      {props.listItem.length === 0 && (
         <p>No other location except Bangalore in India</p>
       )}
       <ul className="list-group">
-        {cityList.map((item, index) => (
+        {props.listItem.map((item, index) => (
           <li
             className={`list-group-item ${
               index === activeIndex ? "active" : ""
