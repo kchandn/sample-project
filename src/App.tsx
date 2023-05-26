@@ -1,3 +1,4 @@
+import FavColour from "./components/fav-colour";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import MainContent from "./components/main-content";
@@ -7,6 +8,7 @@ function App() {
   // return <Message />;
   return (
     <div>
+      {/* <FavColour /> */}
       <Header />
       <span>
         <NavigationMenu />

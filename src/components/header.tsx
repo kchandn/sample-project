@@ -34,7 +34,7 @@ function Header() {
                   onClick={() => console.log(index)}
                 >
                   <a
-                    className="nav-link {manu === 'Home' ? active : ''}"
+                    className={`nav-link ${menu === "Home" ? "active" : ""}`}
                     aria-current="page"
                     href="#"
                   >
