@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Header() {
   const menuItem = [
-    { name: "Home", routeTo: "/home" },
+    { name: "Home", routeTo: "/" },
     { name: "Services", routeTo: "/services" },
     { name: "Technologies", routeTo: "/technologies" },
     { name: "Careers", routeTo: "/careers" },
