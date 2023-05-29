@@ -1,11 +1,13 @@
+import { Link, Outlet } from "react-router-dom";
+
 function Header() {
   const menuItem = [
-    "Home",
-    "Services",
-    "Technologies",
-    "Careers",
-    "About Us",
-    "Contact Us",
+    { name: "Home", routeTo: "/home" },
+    { name: "Services", routeTo: "/services" },
+    { name: "Technologies", routeTo: "/technologies" },
+    { name: "Careers", routeTo: "/careers" },
+    { name: "About Us", routeTo: "/aboutUs" },
+    { name: "Contact Us", routeTo: "/contactus/100" },
   ];
   return (
     <>
@@ -30,15 +32,17 @@ function Header() {
               {menuItem.map((menu, index) => (
                 <li
                   className="nav-item"
-                  key={menu}
+                  key={menu.name}
                   onClick={() => console.log(index)}
                 >
                   <a
-                    className={`nav-link ${menu === "Home" ? "active" : ""}`}
+                    className={`nav-link ${
+                      menu.name === "Home" ? "active" : ""
+                    }`}
                     aria-current="page"
                     href="#"
                   >
-                    {menu}
+                    <Link to={menu.routeTo}>{menu.name} </Link>
                   </a>
                 </li>
               ))}
@@ -57,6 +61,7 @@ function Header() {
           </div>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 }

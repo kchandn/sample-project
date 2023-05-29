@@ -1,3 +1,5 @@
+import AppRouterComponent from "./AppRouterComponent";
+import Alert from "./components/Alert";
 import Message from "./components/Message";
 import FavColour from "./components/fav-colour";
 import Footer from "./components/footer";
@@ -10,8 +12,13 @@ function App() {
   // return <Message text="Chandan" />;
   return (
     <div>
+      <AppRouterComponent />
+      {/* <Alert>
+        <h1>Hello World</h1>
+      </Alert> */}
+      {/* <Alert alertMessage="A simple primary alert—check it out!" /> */}
       {/* <FavColour /> */}
-      <Header />
+      {/* <Header />
       <span>
         <NavigationMenu
           listHeading="Our offices are in following location."
@@ -19,7 +26,7 @@ function App() {
         />
         <MainContent />
       </span>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
